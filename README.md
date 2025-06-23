@@ -1,11 +1,19 @@
-# CucumberCurriculum
+# Final Project Automation Template
 
-# Scala Selenium Cucumber BDD Framework
+The folder structure is in place however they are not populated with the files you will need. You have previous projects which will help here!
+
+## Before you change anything in this template:
+
+1. 1 person make a repository in GitHub to connect this template to.
+2. Change the upstream to your new repository OR remove the Git repository and attach to yours.
+3. Add the other group members as contributors.
+
+## Scala Selenium Cucumber BDD Framework
 
 This is a test automation framework built with **Scala**, **Selenium WebDriver**, **Cucumber (Gherkin)**, and **sbt**. 
 It supports BDD-style testing for web applications.
 
-# Prerequisites
+### Prerequisites
 
 - Java JDK 11+
 - sbt 1.9+
@@ -14,17 +22,6 @@ It supports BDD-style testing for web applications.
 - JUnit
 - Selenium
 
-# Clone the repository:
-# ```bash
-git clone git@github.com:MercatorDigitalAcademy/CucumberCurriculum.git
-cd CucumberCurriculum.
 
-### How to run the test
 
-# 1. Run just the runner class
-sbt "testOnly *TestRunner"
-
-OR
-# 2. Run the runner class using the tags
-sbt "testOnly *TestRunner -- -Dcucumber.filter.tags=@smoke"
 

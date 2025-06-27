@@ -8,4 +8,11 @@ object ProductListingLocators {
 
 //  val AddSauceLabsFleeceJacket: By = By.id("add-to-cart-sauce-labs-fleece-jacket")
 
+  // Add specific products to cart btn
+  val AddSauceLabsBackpackToCart: By = By.id("add-to-cart-sauce-labs-backpack")
+  val AddSauceLabsBikeLightToCart: By = By.id("add-to-cart-sauce-labs-bike-light")
+
+  // Shopping cart link
+  val ShoppingCartLink: By = By.cssSelector(".shopping_cart_link")
+
 }

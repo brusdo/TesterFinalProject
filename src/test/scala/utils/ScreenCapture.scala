@@ -9,7 +9,7 @@ import java.io.File
 
 object ScreenCapture {
 
-  def takeScreenshot_Project(driver: WebDriver, fileName: String): Unit = {
+  def takeScreenshot(driver: WebDriver, fileName: String): Unit = {
 
     val timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
     val screenShotDir = new File(System.getProperty("user.home") + "/Desktop/ScreenShots")

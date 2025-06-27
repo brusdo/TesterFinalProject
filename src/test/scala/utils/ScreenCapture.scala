@@ -1,7 +1,6 @@
 package utils
 
 import org.openqa.selenium.{OutputType, TakesScreenshot, WebDriver}
-import org.openqa.selenium.devtools.v135.filesystem.model.File
 import org.openqa.selenium.io.FileHandler
 
 import java.text.SimpleDateFormat

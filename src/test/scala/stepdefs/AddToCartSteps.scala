@@ -9,11 +9,10 @@ import pages.ProductListingPage.{addBackpackToCart, getCartBadgeCount, navigateT
 
 class AddToCartSteps extends ScalaDsl with EN {
 
-  Given("""I am on the products page""") { () =>
-    // handled by login background?
+  Given("""the user is on the products page""") { () =>
   }
 
-  When("""I click on "Add to cart" for a product""") { () =>
+  When("""the user clicks on "Add to cart" for a product""") { () =>
     addBackpackToCart()
   }
 

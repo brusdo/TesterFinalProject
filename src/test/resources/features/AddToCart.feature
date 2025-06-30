@@ -1,4 +1,4 @@
-
+@smoke @regression
 Feature: Add item to cart
 
   Background:

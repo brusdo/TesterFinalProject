@@ -1,4 +1,4 @@
-
+@regression
 Feature: Log out
 
   Background:
@@ -10,4 +10,4 @@ Feature: Log out
   Scenario:
     When the user clicks the menu button
     And the user select Logout from the options
-    Then the user should be redirected to the Product Listing page
+    Then the user should be taken to the Login page

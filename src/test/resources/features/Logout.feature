@@ -1,4 +1,4 @@
-@regression
+
 Feature: Log out
 
   Background:

@@ -1,8 +1,9 @@
 package pages
 
-import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import support.DriverManager
 import utils.ConfigReader
+import utils.WaitUtils.waitForElementClickable
 
 
 
@@ -28,7 +29,9 @@ trait BasePage {
     driver.findElement(selector).sendKeys(text)
 
   def clickOn(selector: By): Unit = {
-    driver.findElement(selector).click()
+    waitForElementClickable(driver, selector, 10)
+    val jsExecutor: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+    jsExecutor.executeScript("arguments[0].click();", driver.findElement(selector))
   }
 
   def getText(selector: By): String =

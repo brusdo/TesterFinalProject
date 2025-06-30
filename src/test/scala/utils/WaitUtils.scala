@@ -1,7 +1,7 @@
 package utils
 
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, WebDriverWait}
-import org.openqa.selenium.{NoSuchElementException, WebDriver, WebElement}
+import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 
 import java.time.Duration
 import java.util.function.Function
@@ -40,4 +40,15 @@ object WaitUtils {
 
     wait.until(condition)
   }
+
+
+  /**
+   * Wait explicitly for a specific element to be clickable within given timeout.
+   * Uses ExpectedConditions.elementToBeClickable
+   */
+  def waitForElementClickable(driver: WebDriver, selector: By, timeoutSeconds: Long): Unit = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
+    wait.until(ExpectedConditions.elementToBeClickable(selector))
+  }
+
 }

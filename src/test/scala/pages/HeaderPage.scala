@@ -1,7 +1,10 @@
 package pages
 
 import locators.HeaderLocators.{LogoutOption, MenuButton}
-import utils.WaitUtils.waitForElementVisible
+import locators.LoginLocators.Login
+import utils.WaitUtils.{setImplicitWait, waitForElementVisible}
+
+import javax.management.NotificationBroadcaster
 
 object HeaderPage extends BasePage {
 
@@ -13,6 +16,11 @@ object HeaderPage extends BasePage {
   def logOut(): Unit = {
     waitForElementVisible(driver, getWebElement(LogoutOption), 20)
     clickOn(LogoutOption)
+  }
+
+  def verifyInLoginPage(): Unit = {
+    waitForElementVisible(driver = driver, element = getWebElement(Login), timeoutSeconds = 10)
+    assert(driver.getCurrentUrl == "https://www.saucedemo.com/")
   }
 
 }

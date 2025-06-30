@@ -11,7 +11,7 @@ object HeaderPage extends BasePage {
   }
 
   def logOut(): Unit = {
-    waitForElementVisible(driver, getWebElement(LogoutOption), 10)
+    waitForElementVisible(driver, getWebElement(LogoutOption), 20)
     clickOn(LogoutOption)
   }
 

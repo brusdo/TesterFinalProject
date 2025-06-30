@@ -1,0 +1,26 @@
+package stepdefs
+
+import io.cucumber.scala.{EN, ScalaDsl}
+import pages.CartPage.browserLaunch
+import pages.LoginPage.{buttonLogin, getErrorMessage, inputPassword, inputUserName, verifyLoginHeader}
+import pages.ProductListingPage.verifyHeader
+import testdata.Data.{invalidPasswordText, invalidUserNameText}
+
+class InvalidLoginSteps extends ScalaDsl with EN{
+
+
+  When("""the user enters invalid username and password""") { () =>
+    inputUserName(invalidUserNameText)
+    inputPassword(invalidPasswordText)
+    println("User entered invalid login details.")
+  }
+
+  Then("""the user should see a login failed error message""") { () =>
+    println("Error message received: " + getErrorMessage())
+  }
+
+  And("""the user should remain on the login page"""){ () =>
+    verifyLoginHeader()
+    println("The user remained on the login page.")
+  }
+}

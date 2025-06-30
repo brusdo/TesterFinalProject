@@ -1,4 +1,3 @@
-
 Feature: Log out
 
   Background:

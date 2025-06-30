@@ -2,6 +2,7 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import pages.HeaderPage.{buttonMenu, logOut}
+import pages.LoginPage.verifyLoginHeader
 import pages.ProductListingPage.verifyHeader
 
 
@@ -12,7 +13,7 @@ class LogoutSteps extends ScalaDsl with EN {
   }
   And("""the user select Logout from the options"""){ () =>
     logOut()
-    verifyHeader()
+    verifyLoginHeader()
     println("User is logged out")
   }
 }

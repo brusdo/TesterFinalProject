@@ -22,3 +22,10 @@ Feature: Swag Labs Login
     Then the user should see a login failed error message
     And the user should remain on the login page
 
+  Scenario: Unsuccessful login with invalid password
+    Given the user is on the Swag Labs login page
+    When the user enters a valid username
+    And the user enters an invalid password
+    And the user clicks the Login button
+    Then the user should see a login failed error message
+    And the user should remain on the login page

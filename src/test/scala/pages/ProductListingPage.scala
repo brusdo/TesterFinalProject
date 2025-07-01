@@ -1,7 +1,6 @@
 package pages
 
-import locators.ProductListingLocators.{AddSauceLabsBackpackToCart, ProductListingPageHeader, ShoppingCartBadge, ShoppingCartLink, expectedHeader}
-import locators.ProductListingLocators.{AddSauceLabsBackpackToCart, AddSauceLabsBikeLightToCart, ProductListingPageHeader, ShoppingCartLink, expectedHeader}
+import locators.ProductListingLocators.{AddSauceLabsBackpackToCart, ProductListingPageHeader, ShoppingCartBadge, ShoppingCartLink, expectedHeader, AddSauceLabsBikeLightToCart}
 import utils.Assertion
 
 object ProductListingPage extends BasePage {

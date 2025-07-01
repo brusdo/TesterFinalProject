@@ -1,6 +1,6 @@
 package pages
 
-import locators.LoginLocators.{Login, Password, Username, errorMessage, expectedLoginHeader, loginPageHeader}
+import locators.LoginLocators.{Login, Password, Username, errorMessage, expectedErrorMessage, expectedLoginHeader, loginPageHeader}
 import utils.Assertion
 
 object LoginPage extends BasePage {
@@ -21,6 +21,9 @@ object LoginPage extends BasePage {
 
   def getErrorMessage(): String = {
     getText(errorMessage)
+  }
+  def verifyErrorMessage(): Unit = {
+    Assertion.assert(getErrorMessage(), expectedErrorMessage)
   }
 
   def verifyLoginHeader(): Unit = {

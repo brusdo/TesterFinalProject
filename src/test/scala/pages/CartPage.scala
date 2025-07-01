@@ -12,7 +12,7 @@ object CartPage extends BasePage {
     driver.findElements(CartItemName).asScala.toList.map(_.getText)
   }
 
-    def clickCheckoutButton(): Unit = {
+  def clickCheckoutButton(): Unit = {
     clickOn(CheckoutButton)
   }
 
@@ -34,8 +34,8 @@ object CartPage extends BasePage {
     require(cartItems.contains(itemName), s"$itemName not found in the cart")
   }
 
-    def verifyCheckoutPageTitle(): Unit = {
+  def verifyCheckoutPageTitle(): Unit = {
     Assertion.assert(getText(locators.CheckoutLocators.CheckoutPageTitle), expectedCheckoutTitle)
-  // The Assertion is checking if the condition is true, if not, it will fail
+    // The Assertion is checking if the condition is true, if not, it will fail
   }
 }

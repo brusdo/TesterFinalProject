@@ -1,4 +1,4 @@
-@login
+@login @regression
 Feature: Swag Labs Login
 
   Scenario: Successful login with valid credentials

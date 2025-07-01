@@ -9,11 +9,11 @@ object HeaderPage extends BasePage {
 
   //click Menu button
   def buttonMenu(): Unit = {
-    clickOn(MenuButton)
+    waitAndClickOn(MenuButton)
   }
   //Click logout option
   def logOut(): Unit = {
-    clickOn(LogoutOption)
+    waitAndClickOn(LogoutOption)
   }
   //Verify login button is displayed
   def verifyInLoginPage(): Unit = {

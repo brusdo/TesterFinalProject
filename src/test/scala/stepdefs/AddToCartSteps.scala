@@ -21,6 +21,10 @@ class AddToCartSteps extends ScalaDsl with EN {
     badgeCount shouldBe 1
   }
 
+  And("""the user clicks on the shopping cart icon""") { () =>
+    pages.ProductListingPage.navigateToCart()
+  }
+
   And("""the product will appear in the "Your Cart" page""") { () =>
     navigateToCart()
     verifyItemInCart("Sauce Labs Backpack")

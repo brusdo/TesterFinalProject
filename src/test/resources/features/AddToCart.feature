@@ -11,6 +11,7 @@ Feature: Add item to cart
     Given the user is on the products page
     When the user clicks on "Add to cart" for a product
     Then the shopping cart icon will display "1" inside a red circle
+    And the user clicks on the shopping cart icon
     And the product will appear in the "Your Cart" page
 
 #  US6 TC1

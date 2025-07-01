@@ -1,4 +1,4 @@
-
+@smoke
 Feature: Checkout
 
   Background:

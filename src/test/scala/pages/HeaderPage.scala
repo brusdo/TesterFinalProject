@@ -1,18 +1,23 @@
 package pages
 
 import locators.HeaderLocators.{LogoutOption, MenuButton}
-import utils.WaitUtils.waitForElementVisible
+import locators.LoginLocators.Login
+import utils.WaitUtils.waitForElementClickable
+
 
 object HeaderPage extends BasePage {
 
   //click Menu button
   def buttonMenu(): Unit = {
-    clickOn(MenuButton)
+    waitAndClickOn(MenuButton)
   }
-
+  //Click logout option
   def logOut(): Unit = {
-    waitForElementVisible(driver, getWebElement(LogoutOption), 10)
-    clickOn(LogoutOption)
+    waitAndClickOn(LogoutOption)
   }
-
+  //Verify login button is displayed
+  def verifyInLoginPage(): Unit = {
+    waitForElementClickable(driver, Login, 10)
+    assert(getWebElement(Login).isDisplayed)
+  }
 }

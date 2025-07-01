@@ -1,8 +1,9 @@
 package support
 
-import io.cucumber.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import utils.ConfigReader
+import utils.ScreenCapture.takeScreenshot
 
 
 class Hooks extends  ScalaDsl with EN {
@@ -17,9 +18,11 @@ class Hooks extends  ScalaDsl with EN {
     DriverManager.driver.get(ConfigReader.get("base.url"))
   }
 
-  After  {
-
-
+  After {
+    scenario: Scenario =>
+      if(scenario.isFailed){
+        takeScreenshot(DriverManager.driver, "FailedTest")
+      }
     println("Closing browser after scenario...")
     DriverManager.driver.quit()
   }

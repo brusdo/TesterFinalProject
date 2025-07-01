@@ -1,6 +1,6 @@
 package pages
 
-import locators.ProductListingLocators.{AddSauceLabsBackpackToCart, ProductListingPageHeader, ShoppingCartBadge, ShoppingCartLink, expectedHeader}
+import locators.ProductListingLocators.{AddSauceLabsBackpackToCart, ProductListingPageHeader, ShoppingCartBadge, ShoppingCartLink, expectedHeader, AddSauceLabsBikeLightToCart}
 import utils.Assertion
 
 object ProductListingPage extends BasePage {
@@ -11,6 +11,10 @@ object ProductListingPage extends BasePage {
 
   def addBackpackToCart(): Unit = {
     clickOn(AddSauceLabsBackpackToCart)
+  }
+
+  def addBikeLightToCart(): Unit = {
+    clickOn(AddSauceLabsBikeLightToCart)
   }
 
   def getCartBadgeCount(): Int = {

@@ -9,14 +9,16 @@ import java.io.File
 
 object ScreenCapture {
 
-  def takeScreenshot(driver: WebDriver, fileName: String): Unit = {
+  def takeScreenshot(driver: WebDriver, fileName: String): String = {
 
     val timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
-    val screenShotDir = new File(System.getProperty("user.home") + "/Desktop/ScreenShots")
+    val screenShotDir = new File("target/screenshots")
     if (!screenShotDir.exists())
       screenShotDir.mkdir()
     val srcTimestamp: File = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
-    FileHandler.copy(srcTimestamp, new File(s"$screenShotDir/$fileName-$timeStamp.png"))
+    val fullFileName: File = new File(screenShotDir, s"$fileName-$timeStamp.png")
+    FileHandler.copy(srcTimestamp, fullFileName)
+    fullFileName.getPath
 
   }
 }
